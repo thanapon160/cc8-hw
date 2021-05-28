@@ -730,16 +730,16 @@ const sales = [
 // console.log(result)
 
 // 6. หายอดรวมของการจ่ายแต่ละประเภท (Cash, Credit,...)
-// const result = sales.reduce((acc, item) => {
-//   const { product: { unitPrice }, type, discount } = item
-//   if (!acc[type]) {
-//     acc[type] = { totalPay: (discount) ? unitPrice * (1 - discount) : unitPrice }
-//   } else {
-//     acc[type] = { totalPay: acc[type].totalPay + ((discount) ? unitPrice * (1 - discount) : unitPrice) }
-//   }
-//   return acc
-// }, [])
-// console.log(result)
+const result = sales.reduce((acc, item) => {
+  const { product: { unitPrice }, type, discount } = item
+  if (!acc[type]) {
+    acc[type] = { totalPay: (discount) ? unitPrice * (1 - discount) : unitPrice }
+  } else {
+    acc[type] = { totalPay: acc[type].totalPay + ((discount) ? unitPrice * (1 - discount) : unitPrice) }
+  }
+  return acc
+}, [])
+console.log(result)
 
 // 7. หายอดรวมในแต่ละวัน
 // const result = sales.reduce((acc, item) => {
