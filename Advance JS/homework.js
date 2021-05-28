@@ -739,7 +739,7 @@ const result = sales.reduce((acc, item) => {
   }
   return acc
 }, [])
-console.log(result)
+console.log(result) 
 
 // 7. หายอดรวมในแต่ละวัน
 // const result = sales.reduce((acc, item) => {
